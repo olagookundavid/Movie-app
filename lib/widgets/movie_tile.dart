@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
-
 import 'package:flickd_app/models/movie.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +36,7 @@ class MovieTile extends StatelessWidget {
   }
 
   Widget _movieInfoWidget() {
-    return Container(
+    return SizedBox(
       height: height,
       width: width * 0.66,
       child: Column(
@@ -51,12 +49,12 @@ class MovieTile extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: width * 0.56,
                   child: Text(
                     movie.name,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.w200),
@@ -64,7 +62,7 @@ class MovieTile extends StatelessWidget {
                 ),
                 Text(
                   movie.rating.toString(),
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  style: const TextStyle(color: Colors.white, fontSize: 22),
                 )
               ],
             ),
@@ -72,7 +70,7 @@ class MovieTile extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(0, height * 0.02, 0, 0),
               child: Text(
                 "${movie.language.toUpperCase()} | R: ${movie.isAdult} | ${movie.releaseDate}",
-                style: TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(color: Colors.white, fontSize: 12),
               ),
             ),
             Container(
@@ -80,7 +78,7 @@ class MovieTile extends StatelessWidget {
               child: Text(movie.description,
                   maxLines: 9,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(color: Colors.white70, fontSize: 10)),
+                  style: const TextStyle(color: Colors.white70, fontSize: 10)),
             )
           ]),
     );
